@@ -1,1 +1,178 @@
-Flats
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flats — Coming Soon</title>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #0a0a0a;
+      color: #fff;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      overflow: hidden;
+      position: relative;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(110px);
+      opacity: .15;
+      pointer-events: none;
+      z-index: 0;
+      animation: drift 20s ease-in-out infinite alternate;
+    }
+    .orb:nth-child(1) {
+      width: 600px; height: 600px;
+      background: #6366f1;
+      top: -15%; left: -10%;
+      animation-duration: 18s;
+    }
+    .orb:nth-child(2) {
+      width: 500px; height: 500px;
+      background: #8b5cf6;
+      bottom: -20%; right: -10%;
+      animation-duration: 22s;
+      animation-delay: -4s;
+    }
+    .orb:nth-child(3) {
+      width: 400px; height: 400px;
+      background: #06b6d4;
+      top: 50%; left: 50%;
+      animation-duration: 26s;
+      animation-delay: -8s;
+    }
+
+    @keyframes drift {
+      0%   { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(120px, -120px) scale(1.25); }
+    }
+
+    .diamond {
+      position: fixed;
+      width: 8px; height: 8px;
+      opacity: .06;
+      pointer-events: none;
+      z-index: 0;
+      animation: float 18s linear infinite;
+    }
+    .diamond:nth-child(4)  { top: 15%; left: 8%;  animation-delay: 0s; }
+    .diamond:nth-child(5)  { top: 72%; left: 85%; animation-delay: 2s; width: 6px; height: 6px; }
+    .diamond:nth-child(6)  { top: 40%; left: 92%; animation-delay: 4s; width: 7px; height: 7px; }
+    .diamond:nth-child(7)  { top: 85%; left: 12%; animation-delay: 1s; }
+    .diamond:nth-child(8)  { top: 20%; left: 75%; animation-delay: 3s; width: 9px; height: 9px; }
+    .diamond:nth-child(9)  { top: 60%; left: 5%;  animation-delay: 5s; }
+
+    @keyframes float {
+      0%   { transform: translateY(0) rotate(0deg); opacity: .06; }
+      50%  { transform: translateY(-30px) rotate(180deg); opacity: .03; }
+      100% { transform: translateY(0) rotate(360deg); opacity: .06; }
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .logo h1 {
+      font-weight: 800;
+      font-size: 22px;
+      letter-spacing: -.5px;
+    }
+
+    .desc {
+      font-size: clamp(.7rem, 1.6vw, .9rem);
+    }
+
+    .tagline {
+      font-size: 8px;
+      text-transform: uppercase;
+      letter-spacing: .33em;
+      color: rgba(255,255,255,.5);
+      margin-bottom: 3rem;
+    }
+
+    h2 {
+      font-size: clamp(1.5rem, 5vw, 3rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+      opacity: 0;
+      animation: fadeUp .8s ease-out .3s forwards;
+    }
+
+    p {
+      font-size: clamp(.875rem, 2vw, 1.125rem);
+      color: rgba(255,255,255,.5);
+      max-width: 400px;
+      line-height: 1.6;
+      opacity: 0;
+      animation: fadeUp .8s ease-out .6s forwards;
+    }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; transform: translateY(12px); }
+    }
+
+    .footer {
+      position: fixed;
+      bottom: 2rem;
+      z-index: 1;
+      font-size: 10px;
+      color: rgba(255,255,255,.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="orb"></div>
+  <div class="orb"></div>
+  <div class="orb"></div>
+  <div class="diamond"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L22 12L12 22L2 12Z"/></svg></div>
+  <div class="diamond"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L22 12L12 22L2 12Z"/></svg></div>
+  <div class="diamond"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L22 12L12 22L2 12Z"/></svg></div>
+  <div class="diamond"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L22 12L12 22L2 12Z"/></svg></div>
+  <div class="diamond"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L22 12L12 22L2 12Z"/></svg></div>
+  <div class="diamond"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L22 12L12 22L2 12Z"/></svg></div>
+
+  <div class="content">
+    <div class="logo">
+      <h1>Flats</h1>
+    </div>
+    <p class="tagline">Live. Better</p>
+    <h2>Launching Soon</h2>
+    <p class="desc">We're preparing something exceptional<br>a new way to find your perfect space</p>
+  </div>
+
+  <p class="footer">&copy; 2026 Flats. All rights reserved.</p>
+</body>
+</html>
